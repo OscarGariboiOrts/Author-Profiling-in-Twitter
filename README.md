@@ -8,3 +8,5 @@ Dataset: We've been provided with a dataset composed by 100 tweets for 2800 user
 We'll split the classification problem into 2 smaller problems and approaches, one for Variety classification (7 classes) and another for Gender classification (2 classes).
 
 We have performed some data mining to the datasets: Part Of Speech-Tagging, Twitter specific features counting, and some other. 
+
+We'll show 2 different note-books with the 2 different approaches we have followed for each sub-problem: Variety.py and Gender.py (notebook, canviar)
