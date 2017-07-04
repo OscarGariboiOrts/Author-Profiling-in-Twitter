@@ -27,7 +27,7 @@ I have performed a some transformations to the raw text:
   - Tweets have been tokenized using the Tweeter Tokenizer from ----- library.
   - Spanish stop-words have been removed.
   
-I have used a Tf-Idf codification using a max_df of 0.90 in order to remove the corpus inherent stop-words.
+I have used a Tf-Idf Vectorizer from Python's Scikit learn, using a max_df of 0.90 in order to remove the corpus inherent stop-words.
 
 I have used Perceptron as algorithm for training and prediction since it offered a best performance in terms of accuracy and time to fit
 and predict, if compared to SVm with linear kernel.
