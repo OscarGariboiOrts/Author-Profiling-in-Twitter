@@ -8,6 +8,7 @@ POS-Tagging has been performed by checking and countung the number of:
   - Punctuations
   - Interjections
   - Conjunctions
+  - Adverbs
   
 Once the Tag Features Dataframe was built I standarized it by dividing all columns by the column's max value. So all values in the Tag
 Features Dataframe belong to the range [0..1].
