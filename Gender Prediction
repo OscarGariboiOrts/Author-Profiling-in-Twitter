@@ -1,6 +1,6 @@
 I'd like to thanks Javier Vidal Tellols for his help in building the Part Of Speech Tags for all tweets in the Train and Test Datasets.
 
-POS-Tagging has been performed by checking and countung the number of:
+POS-Tagging has been performed by checking and counting the number of:
   - Adjectives
   - Nouns
   - Pronouns
