@@ -9,7 +9,8 @@ POS-Tagging has been performed by checking and countung the number of:
   - Interjections
   - Conjunctions
   
-Once the Tag Features Dataframe was built I standarized it by dividing all columns by the column's max value. So all values in the Tag Features Dataframe belong to the range [0..1].
+Once the Tag Features Dataframe was built I standarized it by dividing all columns by the column's max value. So all values in the Tag
+Features Dataframe belong to the range [0..1].
 
 I have also added some other Twitter related features such us:
   - Emoji count per user.
@@ -28,7 +29,8 @@ I have performed a some transformations to the raw text:
   
 I have used a Tf-Idf codification using a max_df of 0.90 in order to remove the corpus inherent stop-words.
 
-I have used Perceptron as algorithm for training and prediction since it offered a best performance in terms of accuracy and time to fit and predict, if compared to SVm with linear kernel.
+I have used Perceptron as algorithm for training and prediction since it offered a best performance in terms of accuracy and time to fit
+and predict, if compared to SVm with linear kernel.
 
 With all these actions been done, I have achieved the following as best results:
   - Accuracy:
