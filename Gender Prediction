@@ -1,1 +1,35 @@
+I'd like to thanks Javier Vidal Tellols for his help in building the Part Of Speech Tags for all tweets in the Train and test Datasets.
 
+POS-Tagging has been performed by checking and countung the number of:
+  - Adjectives
+  - Nouns
+  - Pronouns
+  - Verbs
+  - Punctuations
+  - Interjections
+  - Conjunctions
+  
+Once the Tag Features Dataframe was built I standarized it by dividing all columns by the column's max value. So all values in the Tag Features Dataframe belong to the range [0..1].
+
+I have also added some other Twitter related features such us:
+  - Emoji count per user.
+  - Word count per user.
+  - Hashtag count per user.
+  - Mention count per user.
+  - Retweets count per user.
+  - URL per user.
+  
+All these features have been standarized as done with POS Tags, all values belong to [0..1].
+
+I have performed a some transformations to the raw text:
+  - All letters have been lowerized.
+  - Tweets have been tokenized using the Tweeter Tokenizer from ----- library.
+  - Spanish stop-words have been removed.
+  
+I have used a Tf-Idf codification using a max_df of 0.90 in order to remove the corpus inherent stop-words.
+
+I have used Perceptron as algorithm for training and prediction since it offered a best performance in terms of accuracy and time to fit and predict, if compared to SVm with linear kernel.
+
+With all these actions been done, I have achieved the following as best results:
+  - Accuracy:
+  - f1-score:
