@@ -1,14 +1,18 @@
-I'd like to thanks Javier Vidal Tellols for his help in building the Part Of Speech Tags for all tweets in the Train and Test Datasets.
+I'd like to thank Javier Vidal Tellols for his help in building the Part Of Speech Tags for all tweets in the Train and Test Datasets.
 
 POS-Tagging has been performed by checking and counting the number of:
   - Adjectives
-  - Nouns
-  - Pronouns
-  - Verbs
+  - Conjuctions
+  - Determinants
   - Punctuations
   - Interjections
-  - Conjunctions
+  - Nouns
+  - Pronouns
   - Adverbs
+  - Prepositions
+  - Verbs
+  - Dates
+  - Numerals
   
 Once the Tag Features Dataframe was built I standarized it by dividing all columns by the column's max value. So all values in the Tag
 Features Dataframe belong to the range [0..1].
@@ -30,9 +34,9 @@ I have performed a some transformations to the raw text:
   
 I have used a Tf-Idf Vectorizer from Python's Scikit learn, using a max_df of 0.90 in order to remove the corpus inherent stop-words.
 
-I have used Perceptron as algorithm for training and prediction since it offered a best performance in terms of accuracy and time to fit
-and predict, if compared to SVm with linear kernel.
+I have used Multi-Layer Perceptron Classifier as algorithm for training and prediction since it offered a better performance in terms
+of accuracy and time to fit and predict, if compared to SVM with linear kernel.
 
 With all these actions been done, I have achieved the following as best results:
-  - Accuracy:
-  - f1-score:
+  - Accuracy: 0.7743
+  - f1-score: 0.7727
