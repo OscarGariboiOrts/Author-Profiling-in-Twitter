@@ -1,1 +1,16 @@
+I have performed the following actions to the Train and Test datasets:
+  - Accents removal. I have pre-processed the corpus in order to remove the accents, since it has shown to offer an slightly better
+    results in accuracy while classifying Variety.
+  - Punctuation removal. I have removed all punctuation marks since it has shown better performance in terms of accuracy.
+  - Lowerize all letters in text.
+  - Tweets have been tokenized using the Tweeter Tokenizer from nltk.tokenize library.
+  - Spanish stop-words have been removed.
+  
+I have used a Tf-Idf Vectorizer from Python's Scikit learn, using a max_df of 0.90 in order to remove the corpus inherent stop-words.
 
+I have used Multi-Layer Perceptron Classifier as algorithm for training and prediction since it offered a better performance in terms
+of accuracy and time to fit and predict, if compared to SVM with linear kernel.
+
+With all these actions been done, I have achieved the following as best results:
+  - Accuracy: 0.9179
+  - f1-score: 0.9179
