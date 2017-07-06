@@ -29,7 +29,7 @@ All these features have been standarized as done with POS Tags, all values belon
 
 I have performed a some transformations to the raw text:
   - All letters have been lowerized.
-  - Tweets have been tokenized using the Tweeter Tokenizer from ----- library.
+  - Tweets have been tokenized using the Tweeter Tokenizer from nltk.tokenize library.
   - Spanish stop-words have been removed.
   
 I have used a Tf-Idf Vectorizer from Python's Scikit learn, using a max_df of 0.90 in order to remove the corpus inherent stop-words.
