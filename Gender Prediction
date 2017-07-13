@@ -1,7 +1,34 @@
-The inital work was done in class using the 
+The initial approach is common to both Gender and Variety classification.
 
+The first approach consisted in removing punctuation marks, lowercase all the letters and using Support Vector Machines (SVM)
+to build the model. The train and test datasets were processed by tokenizing the tweets using the Twitter Tokenizer from Pythhon's
+nltk library. Then the Spanish stop-words were removed. After that Tf-Idf was applied to train and test datasets using unigrams,
+bigrams and trigrams.
 
+The results indicate that unigrams performed better than bigrams or trigrams for Gender classification.
+The best accuaracy for Gender was 0.7486.
 
+We used that information and set unigrams processing as the point from which to move forward.
+
+Next, we explored removing the corpus specific stop-words by setting the Tf-Idf parametre max_df to 0.90. Whiche means that 10% 
+most frequent words in the corpus were removed.
+
+The new model evaluation came with an slightly accuracy improvement, new best accuracy was 0.7507.
+
+Next idea was to keep the punctuation marks and then perfom the Tf-Idf with max_df = 0.90. This bet was a winning one, since
+Gender classification accuracy went up to 0.7571.
+
+We decided to explore SVM parametres changing. A C value of 100 or higher (1 is the default value) achieved a Gender classification
+accuracy value of 0.7686. Since we were dissuaded of using this methodology by the instructor we decided to explore new models.
+
+We performed testing with Tf-Idf and unigrams, bigrams and trigrams using Random Forest Classifier. But the results were worse than
+the obtained with SVM.
+
+Afterwards, we used Multi-Layer Perceptron starting form the best configuration for SVM. Which was unigrams, keeping punctuation
+marks and a max_df value of 0.90. We set a value of 100 for internal layers and run the test. The accuracy we obtained was 0.7664,
+which was the best since then.
+
+Time to explore new ways had come. So, we decided to add new features to the data we had.
 
 POS-Tagging has been performed by checking and counting the number of:
   - Adjectives
@@ -17,10 +44,10 @@ POS-Tagging has been performed by checking and counting the number of:
   - Dates
   - Numerals
   
-Once the Tag Features Dataframe was built I standarized it by dividing all columns by the column's max value. So all values in the Tag
-Features Dataframe belong to the range [0..1].
+Once the Tag Features Dataframe was built, all counts were standarized by dividing all columns by the column's max value.
+So all values in the Tag Features Dataframe belong to the range [0..1].
 
-I have also added some other Twitter related features such us:
+Some other Twitter related features were added, such us:
   - Emoji count per user.
   - Word count per user.
   - Hashtag count per user.
@@ -30,18 +57,13 @@ I have also added some other Twitter related features such us:
   
 All these features have been standarized as done with POS Tags, all values belong to [0..1].
 
-I have performed a some transformations to the raw text:
-  - All letters have been lowerized.
-  - Tweets have been tokenized using the Tweeter Tokenizer from nltk.tokenize library.
-  - Spanish stop-words have been removed.
-  
-I have used a Tf-Idf Vectorizer from Python's Scikit learn, using a max_df of 0.90 in order to remove the corpus inherent stop-words.
+We added the POS tags to the best model since then (MLP, unigrams, punctuation marks, max_df 0.90) and the accuracy value increased
+up to 0.7707.
 
-I have used Multi-Layer Perceptron Classifier as algorithm for training and prediction since it offered a better performance in terms
-of accuracy and time to fit and predict, if compared to SVM with linear kernel.
+We run many tests with many different combinations of features, such as: POS tags + emoji count, POS tags + word count, and so on.
 
-With all these actions been done, I have achieved the following as best results:
-  - Accuracy: 0.7743
-  - f1-score: 0.7727
+We came across a best accuracy for Gender classification of 0.7743 when using POS tags, word count and emoji count.
+
+This has finally our best result, as reported in the paper.
 
 I'd like to thank Javier Vidal Tellols for his help in building the Part Of Speech Tags for all tweets in the Train and Test Datasets.
