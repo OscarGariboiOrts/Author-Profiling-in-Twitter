@@ -12,3 +12,9 @@ We have performed some data mining to the datasets: Part Of Speech-Tagging, Twit
 We'll show 2 different note-books with the 2 different approaches we have followed for each sub-problem: Author Profiling in Twitter - Variety Prediction.ipynb and Author Profiling in Twitter - Gender Prediction.ipynb.
 
 A Baseline based on a Bag-of-Words was provided. The main goal of this tasks, besides the pure pleasure of learning, has been set in beating the Baseline.
+
+A basic code written in R was provided by the instructors. This basic code basically implemented the Bag-of-Words approach. Completely new code has been written using Python. Tweets both in train and test datasets have been preprocessed to remove the accents.
+
+There has been a testing phase where 82 different models have been built and tested. Finally the models with best performance have been selected and reported in the attached note-book files.
+
+Further information about the tasks done under the scope of Variety and Gender classification can be found in the corresponding sections.
