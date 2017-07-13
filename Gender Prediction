@@ -60,7 +60,7 @@ All these features have been standarized as done with POS Tags, all values belon
 We added the POS tags to the best model since then (MLP, unigrams, punctuation marks, max_df 0.90) and the accuracy value increased
 up to 0.7707.
 
-We run many tests with many different combinations of features, such as: POS tags + emoji count, POS tags + word count, and so on.
+We ran many tests with many different combinations of features, such as: POS tags + emoji count, POS tags + word count, and so on.
 
 We came across a best accuracy for Gender classification of 0.7743 when using POS tags, word count and emoji count.
 
