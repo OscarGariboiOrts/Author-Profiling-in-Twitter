@@ -1,16 +1,72 @@
-I have performed the following actions to the Train and Test datasets:
-  - Accents removal. I have pre-processed the corpus in order to remove the accents, since it has shown to offer an slightly better
-    results in accuracy while classifying Variety.
-  - Punctuation removal. I have removed all punctuation marks since it has shown better performance in terms of accuracy.
-  - Lowerize all letters in text.
-  - Tweets have been tokenized using the Tweeter Tokenizer from nltk.tokenize library.
-  - Spanish stop-words have been removed.
+The initial approach is common to both Gender and Variety classification.
+
+The first approach consisted in removing punctuation marks, lowercase all the letters and using Support Vector Machines (SVM)
+to build the model. The train and test datasets were processed by tokenizing the tweets using the Twitter Tokenizer from Pythhon's
+nltk library. Then the Spanish stop-words were removed. After that Tf-Idf was applied to train and test datasets using unigrams,
+bigrams and trigrams.
+
+The results indicate that unigrams performed better than bigrams or trigrams for Variety classification.
+The best accuracy for Variety was 0.9121.
+
+We used that information and set unigrams processing as the point from which to move forward.
+
+Next, we explored removing the corpus specific stop-words by setting the Tf-Idf parametre max_df to 0.90. Whiche means that 10% 
+most frequent words in the corpus were removed.
+
+The new model evaluation came with an slightly accuracy improvement, new best accuracy was 0.9128.
+
+Next idea was to keep the punctuation marks and then perfom the Tf-Idf with max_df = 0.90. This bet was not a winning one, since
+Variety classification accuracy dropped down to 0.9024.
+
+We decided to explore SVM parametres changing. A C value of 100 or higher (1 is the default value) achieved a Variety
+classification accuracy value of 0.9129. Since we were dissuaded of using this methodology by the instructor we decided to
+explore new models.
+
+We performed testing with Tf-Idf and unigrams, bigrams and trigrams using Random Forest Classifier. But the results were worse than
+the obtained with SVM.
+
+Afterwards, we used Multi-Layer Perceptron starting from the best configuration for SVM. Which was unigrams, removing punctuation
+marks and a max_df value of 0.90. We added a new modification, whichw was removing all accents from the corpus. We set a value of
+100 for internal layers and run the test. The accuracy we obtained was 0.9179, which was the best we have got.
+
+Time to explore new ways had come. So, we decided to add new features to the data we had.
+
+POS-Tagging has been performed by checking and counting the number of:
+  - Adjectives
+  - Conjuctions
+  - Determinants
+  - Punctuations
+  - Interjections
+  - Nouns
+  - Pronouns
+  - Adverbs
+  - Prepositions
+  - Verbs
+  - Dates
+  - Numerals
   
-I have used a Tf-Idf Vectorizer from Python's Scikit learn, using a max_df of 0.90 in order to remove the corpus inherent stop-words.
+Once the Tag Features Dataframe was built, all counts were standarized by dividing all columns by the column's max value.
+So all values in the Tag Features Dataframe belong to the range [0..1].
 
-I have used Multi-Layer Perceptron Classifier as algorithm for training and prediction since it offered a better performance in terms
-of accuracy and time to fit and predict, if compared to SVM with linear kernel.
+Some other Twitter related features were added, such us:
+  - Emoji count per user.
+  - Word count per user.
+  - Hashtag count per user.
+  - Mention count per user.
+  - Retweets count per user.
+  - URL per user.
+  
+All these features have been standarized as done with POS Tags, all values belong to [0..1].
 
-With all these actions been done, I have achieved the following as best results:
-  - Accuracy: 0.9179
-  - f1-score: 0.9179
+We added the POS tags to the best model since then (MLP, unigrams, remove punctuation marks, remove accents, max_df 0.90) but
+the accuracy value decreased to 0.9100.
+
+We also tried adding the SnowBall stemmer, and then applying Tf-Idf with max_df = 0.90 (removing accents, removing punctuation
+marks), but the accuracy went down (slightly) to 0.9164.
+
+We ran many tests with many different combinations of features, such as: POS tags + emoji count, POS tags + word count, and so on
+but none of them bet the previous results.
+
+We came across a best accuracy for Variety classification of 0.9179.
+
+This has finally our best result, as reported in the paper.
