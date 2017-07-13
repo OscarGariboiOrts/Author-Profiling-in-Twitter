@@ -1,4 +1,7 @@
-I'd like to thank Javier Vidal Tellols for his help in building the Part Of Speech Tags for all tweets in the Train and Test Datasets.
+The inital work was done in class using the 
+
+
+
 
 POS-Tagging has been performed by checking and counting the number of:
   - Adjectives
@@ -40,3 +43,5 @@ of accuracy and time to fit and predict, if compared to SVM with linear kernel.
 With all these actions been done, I have achieved the following as best results:
   - Accuracy: 0.7743
   - f1-score: 0.7727
+
+I'd like to thank Javier Vidal Tellols for his help in building the Part Of Speech Tags for all tweets in the Train and Test Datasets.
