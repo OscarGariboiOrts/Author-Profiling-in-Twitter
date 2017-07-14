@@ -15,6 +15,8 @@ A Baseline based on a Bag-of-Words was provided. The main goal of this tasks, be
 
 A basic code written in R was provided by the instructors. This basic code basically implemented the Bag-of-Words approach. Completely new code has been written using Python. Tweets both in train and test datasets have been preprocessed to remove the accents.
 
-There has been a testing phase where 82 different models have been built and tested. Finally the models with best performance have been selected and reported in the attached note-book files.
+There has been a testing phase where 82 different models have been built and tested. Finally the models with best performance were selected and reported in the attached note-book files.
 
-Further information about the tasks done under the scope of Variety and Gender classification can be found in the corresponding sections.
+Further information about the tasks done under the scope of Variety and Gender classification can be found in the corresponding sections (story telling).
+
+A paper was also written in order to formally resent the work done and the results that this work showed.
