@@ -10,7 +10,7 @@ The best accuracy for Variety was 0.9121.
 
 We used that information and set unigrams processing as the point from which to move forward.
 
-Next, we explored removing the corpus specific stop-words by setting the Tf-Idf parametre max_df to 0.90. Whiche means that 10% 
+Next, we explored removing the corpus specific stop-words by setting the Tf-Idf parameter max_df to 0.90. Which means that 10% 
 most frequent words in the corpus were removed.
 
 The new model evaluation came with an slightly accuracy improvement, new best accuracy was 0.9128.
