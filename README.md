@@ -19,4 +19,4 @@ There has been a testing phase where 82 different models have been built and tes
 
 Further information about the tasks done under the scope of Variety and Gender classification can be found in the corresponding sections (story telling).
 
-A paper was also written in order to formally resent the work done and the results that this work showed.
+A paper was also written in order to formally present the work done and the results that this work showed.
