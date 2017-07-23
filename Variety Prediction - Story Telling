@@ -1,7 +1,7 @@
 The initial approach is common to both Gender and Variety classification.
 
 The first approach consisted in removing punctuation marks, lowercase all the letters and using Support Vector Machines (SVM)
-to build the model. The train and test datasets were processed by tokenizing the tweets using the Twitter Tokenizer from Pythhon's
+to build the model. The train and test datasets were processed by tokenizing the tweets using the Twitter Tokenizer from Python's
 nltk library. Then the Spanish stop-words were removed. After that Tf-Idf was applied to train and test datasets using unigrams,
 bigrams and trigrams.
 
