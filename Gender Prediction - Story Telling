@@ -24,9 +24,9 @@ accuracy value of 0.7686. Since we were dissuaded of using this methodology by t
 We performed testing with Tf-Idf and unigrams, bigrams and trigrams using Random Forest Classifier. But the results were worse than
 the obtained with SVM.
 
-Afterwards, we used Multi-Layer Perceptron starting form the best configuration for SVM. Which was unigrams, keeping punctuation
+Afterwards, we used Multi-Layer Perceptron starting from the best configuration for SVM. Which was unigrams, keeping punctuation
 marks and a max_df value of 0.90. We set a value of 100 for internal layers and run the test. The accuracy we obtained was 0.7664,
-which was the best since then.
+which was the best until then.
 
 Time to explore new ways had come. So, we decided to add new features to the data we had.
 
